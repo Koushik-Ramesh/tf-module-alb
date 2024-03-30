@@ -1,5 +1,6 @@
 # Creates Public Security Group
 resource "aws_security_group" "alb_public" {
+    count           =  var.INTERNAL ? 0 : 1   
     name            = "Roboshop-${var.ENV}-public-alb-sg"
     description     = "allow only public traffic"
     vpc_id          = data.terraform_remote_state.vpc.outputs.VPC_ID
@@ -28,6 +29,7 @@ resource "aws_security_group" "alb_public" {
 
 # Creates Private Security Group
 resource "aws_security_group" "alb_private" {
+    count           = var.INTERNAL ? 1 : 0
     name            = "Roboshop-${var.ENV}-private-alb-sg"
     description     = "allow only private traffic"
     vpc_id          = data.terraform_remote_state.vpc.outputs.VPC_ID
