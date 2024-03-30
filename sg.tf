@@ -1,5 +1,5 @@
 # Creates Public Security Group
-resource "aws_security_group" "alb-public" {
+resource "aws_security_group" "alb_public" {
     name            = "Roboshop-${var.ENV}-public-alb-sg"
     description     = "allow only public traffic"
     vpc_id          = data.terraform_remote_state.vpc.outputs.VPC_ID
@@ -27,7 +27,7 @@ resource "aws_security_group" "alb-public" {
 }
 
 # Creates Private Security Group
-resource "aws_security_group" "alb-private" {
+resource "aws_security_group" "alb_private" {
     name            = "Roboshop-${var.ENV}-private-alb-sg"
     description     = "allow only private traffic"
     vpc_id          = data.terraform_remote_state.vpc.outputs.VPC_ID
