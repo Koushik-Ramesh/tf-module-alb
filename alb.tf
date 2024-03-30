@@ -1,5 +1,5 @@
 # Creates Application Load Balancer
-resource "aws_lb" "alb" {
+resource "aws_alb" "alb" {
   name               = var.ALB_NAME
   internal           = var.INTERNAL
   load_balancer_type = "application"
