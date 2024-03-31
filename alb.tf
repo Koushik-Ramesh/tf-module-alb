@@ -27,3 +27,4 @@ resource "aws_lb_listener" "private" {
       status_code  = "200"
     }
 }
+}
