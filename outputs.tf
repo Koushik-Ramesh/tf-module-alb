@@ -1,3 +1,3 @@
 output "ALB_ARN" {
-    value = aws_alb_alb.arn
+    value = aws_lb_alb.arn
 }
